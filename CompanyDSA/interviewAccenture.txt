@@ -1,0 +1,54 @@
+Do your homework—on the company and yourself.
+Research the four Ps on their website: Products, Press Releases, Personnel, Position.
+If you’re working with a recruiter, lean on them! Your recruiter knows the hiring team and the company. It’s literally their job to help you to get the job.
+Review your previous positions, responsibilities and accomplishments. What are you most proud of?
+
+Know your motivation for change.
+Know your one- to two-minute elevator pitch on yourself. Highlight your educational and career highlights, and throw in a fun fact if it feels right.
+Why are you interested in the company or position? Be specific. Be passionate! This is your opportunity to show off all the research you’ve done.
+
+Have good examples on hand.
+When possible, answer questions in the STAR format (Situation, Task, Action, Result). It’s helpful to write out 3-5 of these examples prior to your interview and practice talking through them—but put your notes away on the day of the interview so you aren’t tempted to read directly from them.
+
+End the interview strong.
+Good questions help demonstrate your preparation and your level of interest in the company and the role. Asking 1-2 thoughtful questions really can set you apart from the rest of the candidates.
+A good close and wrap-up is not just for sales jobs.
+Reiterate your interest in the role, how it fits with your career goals and how you meet the needs of the position.
+Don’t forget to follow up! Get your interviewer’s email address and send a concise follow-up (I like bullet points) outlining what you learned in the interview and how you will make an impact in the role and to the organization.
+
+Accenture is a leading global professional services company that helps the world’s leading businesses, 
+governments and other organizations build their digital core, optimize their operations, accelerate 
+revenue growth and enhance citizen services
+
+You'll be using advanced technologies, data, Al, together with your ingenuity and diverse expertise, 
+all in the service of operating with greater speed, efficiency and intelligence as well as creating 360- 
+degree value. 
+You'll be driving value not only for shareholders, but for all stakeholders - clients, partners, people and 
+communities. 
+
+What are we looking for? 
+We would love you to have: 
+• Proficiency in Java, .Net, C#, C, Python, SQL, ReactJS, Angular across frontend/ backend 
+databases. 
+• Exposure to cloud hyper-scalers like Microsoft, AWS, and Google. 
+• Hands on experience in writing code frontend/backend/database server and 
+• Exposure to test automation frameworks 
+• Good analytical and problem-solving skills and proficient in verbal communication skills 
+• Ability to ramp up on existing solution/project and quickly contribute towards bug fixes 
+• Multi-disciplinary and versatile with aptitude to learn and apply new skills faster 
+• Potential to manage client interactions with proficiency 
+• Exposure to foundational AI/ML concepts such as supervised learning, neural networks, or 
+natural language processing (NLP) through academic projects, certifications, or coursework 
+• Familiarity with AI/ML tools or libraries like TensorFlow, PyTorch, Scikit-learn, or OpenCV is a 
+plus 
+• Interest in exploring how AI can be applied in real-world business and technology solutions
+
+As an Advance Engineering Intern, you would: 
+• Become a part of the project team to deliver on client business opportunity 
+• Design custom technology solutions relevant for client's context in Niche and emerging 
+• skills 
+• Do application development in hyper agile environment 
+• Support in building proprietary assets, prototypes, innovative applications, Bots, 
+• Creating New IPs, Deep Learning models, new NLP solutions, etc. 
+• Gain exposure to cutting edge technologies, including potential applications of AI and machine 
+learning in real world scenarios 

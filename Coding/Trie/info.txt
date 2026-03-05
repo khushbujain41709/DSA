@@ -1,0 +1,4 @@
+It is also known as Prefix Tree and it is a n ary tree.
+It is used in space optimization.
+Node of Trie consists of char data value, unordered_map consisting of children of the node.
+Terminal or end of word - It is the current node consisting end of a character.

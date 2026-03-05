@@ -1,0 +1,28 @@
+The distinction between a static and dynamic segment tree primarily lies in their memory allocation and ability to handle changes in the underlying data structure's size or range.
+
+Static Segment Tree: 
+• Fixed Size: A static segment tree is built upon a fixed-size array or range. The size of the array is known beforehand, and the tree structure is built to cover this entire range.
+• Pre-allocated Memory: Memory for all nodes in the segment tree is typically pre-allocated when the tree is constructed. This includes nodes that might not be used if the range is sparse.
+• Efficient for Fixed Ranges: It is efficient for scenarios where the underlying array or range does not change in size, and only updates to element values or range queries are performed.
+
+Dynamic Segment Tree(Implicit Segment Trees/pointer-based segment trees): 
+• Variable Size/Range: A dynamic segment tree can handle situations where the size of the underlying range is very large or not known in advance, or where elements might be inserted or deleted, effectively changing the range being covered.
+• On-Demand Node Creation: Instead of pre-allocating memory for all possible nodes, a dynamic segment tree creates nodes only when they are needed during update or query operations. This saves memory, especially for very large or sparse ranges.
+• Pointers for Children: It typically uses pointers to represent child nodes, allowing for flexible tree expansion. If a child node doesn't exist, a new one is created and linked. 
+• Suitable for Large/Sparse Ranges: Dynamic segment trees are particularly useful when dealing with very large coordinate ranges (e.g., 1 to 10^9) where a static segment tree would consume excessive memory.
+
+Imagine a range of 1 to 10^18 but you only need to perform operations on a few scattered points within this range. A static segment tree would attempt to allocate memory for 4*(10^18) nodes, which is impossible. A dynamic segment tree, however, would only create the necessary nodes for those specific points and their ancestors, making it a viable solution.
+
+For storing N elements, a static segment tree has a fixed memory complexity of O(N), specifically around 4N nodes in a typical implementation, while a dynamic segment tree's memory complexity is O(MlogN)or O(M), where M is the number of operations performed, adapting to the data usage. 
+
+Advantages and Disadvantages of Dynamic Segment Trees:
+The primary difference is the dynamic allocation, where nodes are created on the fly as they are needed during queries and updates, rather than pre-allocating the entire tree structure. 
+Advantages:
+Memory Efficiency for Sparse Data: Dynamic segment trees save significant memory when the data range is very large.
+Flexibility and Adaptability: They can handle situations where the data size is unknown in advance or changes frequently during runtime, as they can grow or shrink as needed.
+Scalability: The structure can adapt to changing data requirements without being limited by an initial fixed size, which is a major advantage for large-scale or online problems.
+Disadvantages:
+Slower Access Time: Dynamic allocation and the use of pointers (or maps) can result in slightly slower element access compared to the array-based, contiguous memory allocation of a static segment tree, which benefits from better cache performance.
+Implementation Complexity: Dynamic segment trees are generally more complex to implement and debug due to manual memory management (using pointers or node structures).
+Memory Management Overhead: There is some overhead associated with dynamic memory allocation and deallocation during runtime, which can sometimes lead to performance issues or memory fragmentation in certain scenarios.
+Higher Constant Factor for Dense Data: If all or most of the range is eventually used i.e., M ~ N, the memory and time overhead of dynamic allocation might make them less efficient in practice compared to a static implementation for the same number of nodes. 

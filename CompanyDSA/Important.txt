@@ -1,0 +1,115 @@
+Horizontal software serves broad, cross-industry needs (like Microsoft Office, accounting), while vertical software targets specific industries with tailored features (like dental practice management or logistics software), offering deep functionality for niche markets but with a smaller customer base, whereas horizontal software has massive appeal but less specialization. 
+
+MS Excel - .xls
+MS OUtlook - .ost
+
+Macro is used in MS Office to automate the repetitive tasks.
+
+Cloud computing delivers on-demand computing services—like storage, databases, software, AI, and analytics—over the internet, letting users access resources from remote data centers instead of their own hardware, typically on a pay-as-you-go basis, offering scalability, cost savings, and flexibility for individuals and businesses. It eliminates the need to manage physical servers, allowing faster innovation and scaling resources as needed.
+
+Key Cloud Providers:
+1) Amazon Web Services (AWS)
+Services: EC2 (Compute), S3 (Storage), Amazon Relational Database Service (Amazon RDS) (Database), Lambda (Serverless)
+Example: Netflix uses AWS for delivering global content efficiently.
+
+2)Microsoft Azure
+Services: Virtual Machines, Azure Blob Storage, SQL Database, Azure Functions
+Example: LinkedIn uses Azure to enhance performance and scalability of its services.
+
+3)Google Cloud Platform (GCP)
+Services: Compute Engine, Cloud Storage, BigQuery, Cloud Functions
+Example: Snapchat uses GCP to manage and support its cloud operations.
+
+Serializing a machine learning model is the process of converting the trained model, including its architecture, parameters, and learned weights, into a persistent file format that can be saved to disk or transmitted over a network. 
+
+Joblib is a Python library for lightweight pipelining, offering tools for efficient saving/loading (serialization) of large objects (like NumPy arrays, models) and easy parallel computing, especially with scikit-learn. It speeds up tasks by using multiple CPU cores, caching function results, and optimizing for large data, making it crucial in data science for tasks like hyperparameter tuning (e.g., GridSearchCV with n_jobs=-1) and model persistence (joblib.dump, joblib.load).
+
+Global variables are globally accessible. Java does not support globally accessible variables due to following reasons:
+1)The global variables breaks the referential transparency
+2)Global variables creates collisions in namespace
+
+Method overloading: When a method in a class having the same method name with different arguments is said to be method overloading. 
+Method overriding: When a method in a class having the same method name with same arguments is said to be method overriding.
+
+A constructor is a member function of a class that is used to create objects of that class. It has the same name as the class itself, has no return type, and is invoked using the new operator.
+A method is an ordinary member function of a class. It has its own name, a return type (which may be void), and is invoked using the dot operator.
+
+Inheritance is the process of inheriting all the features from a class. 
+The advantages of inheritance are:- reusability of code and accessibility of variables and methods of the super class by subclasses.
+
+SQL stands for Structured Query Language and is used for creating and processing database data and metadata.
+
+An overflow error happens when a calculation produces a result too large to fit into the memory space (bits) allocated for it, causing data loss or corruption.
+Types of Overflow:
+Integer Overflow: Occurs with whole numbers, where the result exceeds the maximum integer value.
+Buffer Overflow: A type where more data is written to a buffer than it can hold, overwriting adjacent memory.
+Stack Overflow: A type where a program uses too much memory on the call stack, often from infinite recursion.
+
+Diamond problem also known as deadly diamond problem or deadly diamond of death, occurs when multiple inheritance is conducted in JAVA. JAVA does not support multiple inheritance, and therefore consequently leads to a compilation error if attempted.
+The "Deadly Diamond of Death" (or Diamond Problem) is a conflict in multiple inheritance in object-oriented programming (OOP) where a class inherits from two classes that share a common ancestor, creating an ambiguous "diamond" shape in the inheritance structure, making it unclear which version of a shared method or attribute to use. While languages like C++ handle it with virtual inheritance, Java avoids it by disallowing multiple class inheritance.
+
+Virtual inheritance is a C++ mechanism that assures that grandchild-derived classes inherit only one copy of a base class's member variables. If two classes B and C inherit from a class A, and class D inherits from both B and C, D will include two copies of A’s member variables: one via B and the other via C. Using scope resolution, these will be available independently. By declaring the base class as virtual in the intermediate derived classes (B and C), you ensure that only a single, shared instance of the common base (A) is created in the final D object.
+
+Coffman’s conditions that lead to a deadlock are:
+Mutual Exclusion: Only one process may use a critical resource at a time.
+Hold & Wait: A process may be allocated some resources while waiting for others.
+No Pre-emption: No resource can be forcible removed from a process holding it.
+Circular Wait: A closed chain of processes exist such that each process holds at least one resource needed by another process in the chain.
+
+Short-term, medium-term, and long-term scheduling refer to different levels of process management in operating systems, differing in speed and scope: Long-Term (Job Scheduler) selects jobs from disk to memory (slow, controls multiprogramming); Medium-Term (Swapper) removes processes from memory to disk (intermediate speed, reduces multiprogramming); and Short-Term (CPU Scheduler) picks the next process from the ready queue to run on the CPU (very fast, frequent execution).
+
+An abstract class can have abstract and concrete methods, while an interface traditionally contains only abstract methods (though Java 8+ allows default methods). A class can implement multiple interfaces but extend only one abstract class. Abstract classes can have constructors and maintain state, while interfaces cannot.
+
+Stacks are used in function calls, expression evaluation, and backtracking algorithms, while queues are used in breadth-first search, scheduling, and buffering.
+
+Normalization organizes database structures to minimize redundancy and dependency by dividing large tables into smaller, related tables. The primary forms are:
+1NF: Eliminates multivariate attributes by ensuring atomic values in columns.
+2NF: Meets 1NF requirements and removes partial dependencies by ensuring non-key attributes depend on the primary key.
+3NF: Meets 2NF requirements and eliminates transitive dependencies.
+For example, in a student management system I designed, I normalized student contact information by creating separate tables for students and addresses rather than including multiple address fields in the student table. This reduced redundancy, improved data integrity, and simplified updates to address information.
+
+A REST API (Representational State Transfer Application Programming Interface) is an architectural style for designing networked applications that allows different computer systems to communicate with each other over the internet. It uses standard web protocols, primarily HTTP, to exchange data in a simple, scalable, and standardized way. 
+Communication in a REST API occurs through a client-server model. A client (e.g., a web browser or mobile app) sends a request to a server, and the server responds with the requested data or the outcome of the action.
+URIs (Uniform Resource Identifiers) Each resource is uniquely identified by a URI (often a URL), such as /users for a collection of users or /users/123 for a specific user.
+HTTP Methods Standard HTTP verbs are used to define the action to be performed on a resource. These typically map to CRUD (Create, Read, Update, Delete) operations:
+GET: Retrieves a resource or a collection of resources.
+POST: Creates a new resource.
+PUT: Updates an existing resource with a complete new representation.
+PATCH: Applies partial modifications to a resource.
+DELETE: Removes a resource.
+Data Formats Data is typically transferred between the client and server in lightweight formats, with JSON (JavaScript Object Notation) being the most common, though XML or plain text are also possible.
+Statelessness Each request from a client must contain all the information the server needs to process it. The server does not store any client context or session state between requests, which improves scalability.
+I implemented a REST API for a student management system in a project. Each endpoint represented resources like students or courses, used HTTP methods appropriately (GET for retrieval, POST for creation), and returned proper status codes and JSON responses.
+
+In Java, a process is an independent, running instance of a program with its own dedicated memory space, while a thread is a single, lightweight unit of execution within a process that shares that process's memory and resources.
+
+The Model-View-Controller(MVC) is an architectural design pattern that separates an application into three interconnected components to isolate the internal data representation from the user interface. This makes code more organized, maintainable, and scalable. 
+The Three Components of MVC are:
+Model: The lowest level of the pattern, responsible for managing the application's data and business logic. It interacts with databases, validates data, and ensures data integrity. The Model is independent of the user interface and notifies associated Views and Controllers when its data changes.
+View: Responsible for the presentation layer and user interface (UI). It displays data from the Model in a format the user can understand, such as HTML pages, charts, or diagrams. The View receives user input and forwards it to the Controller but does not contain complex business logic itself.
+Controller: Acts as an intermediary, handling user input and interactions. It processes the input, decides which Model component to interact with, and then selects the appropriate View to display the results to the user. The Controller is essentially the "brain" that coordinates the flow of data and application logic. 
+How MVC Works:
+The typical flow of interaction in an MVC application is as follows: 
+A user interacts with the application through the View(e.g., clicking a button, submitting a form).
+The View sends the input to the Controller.
+The Controller processes the input and, if necessary, communicates with the Model to retrieve or update data(e.g., querying a database).
+The Model performs the operation and returns the data or status to the Controller(or in some interpretations, the Model notifies the View directly of changes).
+The Controller selects the appropriate View and provides it with the data.
+The View renders the final presentation to the user.
+
+Implementing error handling involves using try-catch blocks for immediate issues, employing global handlers(middleware) for centralized management, logging details(stack traces, timestamps, user ID, request data), providing user-friendly messages(avoiding jargon).
+
+Spatial Data:
+Definition: Data that identifies the geographic location of features and boundaries on Earth, often represented as coordinates.
+Examples: GPS coordinates, city locations, road networks, river boundaries, property outlines, building shapes.
+Focus: Location, distribution, proximity, and spatial relationships.
+
+Temporal Data:
+Definition: Data that records events or measurements in sequence over time, often as time-series.
+Examples: Stock market fluctuations, daily temperature readings, sensor data logs, patient records over months.
+Focus: Sequence, duration, trends, and changes over specific time intervals.
+
+Spatiotemporal Data:
+Definition: Data that incorporates both spatial and temporal dimensions to understand phenomena that change in both location and time.
+Examples: Tracking a hurricane's path (location and time), monitoring disease outbreaks in different regions over weeks, vehicle GPS traces, weather patterns.
+Applications: Geographic Information Systems (GIS), movement analysis, environmental monitoring, epidemiology

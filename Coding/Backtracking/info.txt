@@ -1,0 +1,10 @@
+There are 4 major programming paradigms:
+1) Brute Force
+2) Dynamic programming
+3) Greedy
+4) Divide and Conquer
+
+In brute force, we explore all possible outcomes, doesn't matter whether it leads to an answer or not.
+There are two optimizatiosn in brute force:
+1) We prune irrelevant calls.
+2)We trace the path for an answerand then we revert it for other possiblities. 
