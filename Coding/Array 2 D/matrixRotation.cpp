@@ -1,6 +1,10 @@
 // Leetcode - 48
 // Rotate matrix by 90 clockwise.
 // Leetcode - 867
+/*
+Step 1 (Transpose): Convert rows → columns
+Step 2 (Reverse rows): Flip horizontally → gives 90° clockwise rotation
+*/
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -13,7 +17,7 @@ void rotate(vector<vector<int>>& matrix){
             matrix[j][i] = temp;
         }
     }
-    // reversing columns
+    // reversing rows
     for(int k = 0;k<m;k++){   // traversing in each row
     int i = 0;
     int j = m-1;

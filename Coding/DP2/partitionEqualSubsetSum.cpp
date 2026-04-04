@@ -29,6 +29,38 @@ bool canPartition(vector<int>& nums) {
     dp.resize(n, vector<int> (target + 1, -1));
     return helper(nums, target, 0, 0);
 }
+// Using Subset sum equals to K from DP6
+bool subsetSumToK(int n, int k, vector<int> &arr) {
+    vector<bool> dp(k+1), curr(k+1);
+    dp[0] = true;
+    curr[0] = true;
+    // dp size = k+1 so If arr[0] > k, then: dp[arr[0]] will go out of bounds
+    if(arr[0] <= k){
+        dp[arr[0]] = true;
+    }
+    for(int i = 1; i<n; i++){
+        for(int j = 1; j<=k; j++){
+            bool take = 0;
+            if(j >= arr[i]){
+                take = dp[j-arr[i]];
+            } 
+            bool notTake = dp[j];
+            curr[j] = take || notTake;
+        }
+        dp = curr;
+    }
+    return dp[k];
+}
+bool canPartition(vector<int>& nums) {
+    // if there exists a subset with sum -> s/2 then remaining subsets will definitely have s/2 sum.
+    int n = nums.size();
+    int s = 0;
+    for(int i = 0; i<n; i++){
+        s += nums[i];
+    }
+    if(s % 2 != 0) return false;
+    return subsetSumToK(n, s/2, nums);
+}
 int main(){
     
     return 0;

@@ -7,7 +7,7 @@ int binary_To_decimal(string& binary){
     int result = 0;
     for(int i = n-1;i>=0;i--){
         char ch = binary[i]; // last character
-        int num = ch - '0'; // string to number conversion, substracting ascii of ch with ascii of 0 and ascii of 1 with ascii of 1.
+        int num = ch - '0'; // string to number conversion, subtracting ascii of ch with ascii of 0 and ascii of 1 with ascii of 1.
         result += num*(1<<(n-i-1)); // first index like 1<<0 is 1 ans 1<<1 is 10 that is 2 so on.
     }
     return result;

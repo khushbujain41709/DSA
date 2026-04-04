@@ -5,7 +5,7 @@
 #include<unordered_map>
 using namespace std;
 // approach 1 :
-// make a prefix sum array, for eaxmple let input be [3,2,4,5,2,8,1,2,7] and k = 9
+// make a prefix sum array, for example let input be [3,2,4,5,2,8,1,2,7] and k = 9
 // now prefix sum array is : [3,5,9,14,16,24,25,27,34]
 // now answer is 4 as [3,2,4], [4,5] , [8,1] , [2,7] 
 // so we traverse in whole prefix sum array and check if arr[i] - k is present in elements before arr[i] , if yes then count++;

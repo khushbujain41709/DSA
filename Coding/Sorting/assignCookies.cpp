@@ -22,8 +22,8 @@ int findContentChildren(vector<int>& g, vector<int>& s){
     return count; 
 }
 int main(){
-    vector<int> g = {10,9,8,7};
-    vector<int> s = {5,6,7,8};
+    vector<int> g = {10,9,8,7}; // 7 8 9 10
+    vector<int> s = {5,6,7,8};  // 5 6 7 8
     cout<<findContentChildren(g,s);
     return 0;
 }
