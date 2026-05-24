@@ -42,8 +42,8 @@ bool search(node* head, string word, string& maxx){
     node* curr = head;
     string s = "";
     for(int i = 0; i<word.size(); i++){
+        curr = curr->children[word[i]];
         if(curr->isTerminal()){
-            curr = curr->children[word[i]];
             s += word[i];
             maxx = s;
         }
