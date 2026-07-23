@@ -1,0 +1,94 @@
+It is used in the questions where window or subarray of size k is mentioned.
+Subarray is continuous part of array.
+Subarray is known as window.
+Last window starts from n-k index.
+If we see subarray question, then we can use prefix sum or sliding window or both prefix sum and sliding window.
+
+for(int i = 0;i<n-k+1;i++){
+    for(int j = i;j<i+k;j++){
+    }
+}
+
+Sliding Window & Two Pointers — Cheat Sheet
+
+Core Idea
+Use 2 pointers (L, R) to represent a window
+Window = subarray / substring (continuous)
+Two operations:
+Expand → R++
+Shrink → L++
+
+Pattern 1: Constant Window
+When?
+Window size is fixed (e.g., size = K)
+Compute first window sum
+Then slide window
+Formula
+sum = sum - arr[L];
+L++;
+R++;
+sum = sum + arr[R];
+Complexity - O(N)
+
+Pattern 2: Longest Subarray / Substring
+When?
+“Longest subarray/substring such that condition holds”
+Template (MOST IMPORTANT)
+int L = 0;
+int sum = 0;
+int maxLen = 0;
+for(int R = 0; R < n; R++){
+    sum += arr[R];   // expand
+    while(sum > k){  // invalid → shrink
+        sum -= arr[L];
+        L++;
+    }
+    if(sum <= k){    // valid
+        maxLen = max(maxLen, R - L + 1);
+    }
+}
+Key Rules
+Expand → always with R
+Shrink → only when condition breaks
+Length formula:
+length = R - L + 1
+Optimization (IMPORTANT)
+Replace:
+while(condition fails)
+With:
+if(condition fails)
+
+Only when:
+You need length only (not actual subarray)
+Complexity - O(2N) ≈ O(N)
+Because:
+R moves N times
+L moves N times total
+
+Pattern 3: Count Subarrays
+When?
+“Number of subarrays with condition”
+Trick (VERY IMPORTANT)
+Instead of:
+count(sum == k)
+Use:
+count(sum <= k) - count(sum <= k-1)
+Why?
+Exact conditions are hard with sliding window
+Convert to range condition
+
+Pattern 4: Minimum / Shortest Window
+When?
+“Smallest subarray satisfying condition”
+Idea
+Expand until valid
+Then shrink as much as possible
+Template
+for(int R = 0; R < n; R++){
+    // expand
+    while(valid condition){
+        minLen = min(minLen, R - L + 1);
+        // shrink
+        L++;
+    }
+}

@@ -1,0 +1,8 @@
+If array size is n then segment tree array size is 4*n
+If parent index is i then left child index is 2*i + 1 and right child index is 2*i + 2
+
+For building segment tree, 
+TC = O(n)
+SC = O(n)
+
+For a single query, TC = O(log n)
