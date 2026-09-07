@@ -25,63 +25,63 @@ class Node{
 class Trie {
 	public:
     Node* root;
-	    Trie() {
-	        root = new Node('\0');
-	    }
-	    void insert(string word) {
-	        Node* curr = root;
-            for(int i = 0; i<word.size(); i++){
-                char ch = word[i];
-                if(curr->children.count(ch)){
-                    curr = curr->children[ch]; // move to next character
-                    curr->countWordsStarting++;
-                }
-                else{
-                    Node* child = new Node(ch);
-                    curr->children[ch] = child; // make a new character
-                    curr = child; // move to next character
-                    curr->countWordsStarting++;
-                }
+    Trie() {
+        root = new Node('\0');
+    }
+    void insert(string word) {
+        Node* curr = root;
+        for(int i = 0; i<word.size(); i++){
+            char ch = word[i];
+            if(curr->children.count(ch)){
+                curr = curr->children[ch]; // move to next character
+                curr->countWordsStarting++;
             }
-            curr->makeTerminal();
-            curr->countWordsEnding++;
-    	}
-	    int countWordsEqualTo(string word) {
-	        Node* curr = root;
-            for(int i = 0; i<word.size(); i++){
-                char ch = word[i];
-                if(curr->children.count(ch)){
-                    curr = curr->children[ch]; // move to next character
-                }
-                else{
-                    return 0;
-                }
+            else{
+                Node* child = new Node(ch);
+                curr->children[ch] = child; // make a new character
+                curr = child; // move to next character
+                curr->countWordsStarting++;
             }
-            return curr->countWordsEnding;
-    	}
-	    int countWordsStartingWith(string word) {
-	        Node* curr = root;
-            for(int i = 0; i<word.size(); i++){
-                char ch = word[i];
-                if(curr->children.count(ch)){
-                    curr = curr->children[ch]; // move to next character
-                }
-                else{
-                    return 0;
-                }
+        }
+        curr->makeTerminal();
+        curr->countWordsEnding++;
+    }
+    int countWordsEqualTo(string word) {
+        Node* curr = root;
+        for(int i = 0; i<word.size(); i++){
+            char ch = word[i];
+            if(curr->children.count(ch)){
+                curr = curr->children[ch]; // move to next character
             }
-            return curr->countWordsStarting;
-    	}
-	    void erase(string word) {
-	        Node* curr = root;
-            for(int i = 0; i<word.size(); i++){
-                char ch = word[i];
-                if(curr->children.count(ch)){
-                    curr = curr->children[ch]; // move to next character
-                    curr->countWordsStarting--;
-                }
+            else{
+                return 0;
             }
-            curr->countWordsEnding--;
-            return;
-	    }
+        }
+        return curr->countWordsEnding;
+    }
+    int countWordsStartingWith(string word) {
+        Node* curr = root;
+        for(int i = 0; i<word.size(); i++){
+            char ch = word[i];
+            if(curr->children.count(ch)){
+                curr = curr->children[ch]; // move to next character
+            }
+            else{
+                return 0;
+            }
+        }
+        return curr->countWordsStarting;
+    }
+    void erase(string word) {
+        Node* curr = root;
+        for(int i = 0; i<word.size(); i++){
+            char ch = word[i];
+            if(!curr->children.count(ch)) return; // word doesn't exist
+            if(curr->children.count(ch)){
+                curr = curr->children[ch]; // move to next character
+                curr->countWordsStarting--;
+            }
+        }
+        curr->countWordsEnding--;
+    }
 };

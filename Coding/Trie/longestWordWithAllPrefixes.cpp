@@ -1,4 +1,4 @@
-// Leetcode 1858
+// Leetcode 1858 - Premium
 #include<bits/stdc++.h>
 using namespace std;
 class node{

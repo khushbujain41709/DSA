@@ -1,4 +1,6 @@
 // Leetcode 437
+// every node can be the starting point of a path
+// node values can be negative.
 #include<iostream>
 #include<vector>
 #include<stack>
@@ -15,25 +17,48 @@ class TreeNode{
         this->right = NULL;
     }
 };
-void helper(TreeNode* root, vector<vector<int>>& ans, int target , vector<int> vec){
-    if(root == NULL) return;
-    if(root->left == NULL && root->right == NULL && target == root->val){
-        vec.push_back(root->val);
-        ans.push_back(vec);
+// Solution 1
+class Solution {
+public:
+    void helper(TreeNode* root, long long target, int& count){
+        if(root == NULL) return;
+        if((long long)(root-> val) == target){
+            count ++;
+        }
+        helper(root->left, target - (long long)(root->val) , count);
+        helper(root->right, target - (long long)(root->val) , count);
     }
-    vec.push_back(root->val);
-    if(root ->left != NULL){
-        helper(root->left, ans, target - (root->val), vec);           
+    int pathSum(TreeNode* root, int targetSum) {
+        if(root == NULL) return 0;
+        int count = 0;
+        helper(root, (long long)targetSum, count);
+        count += (pathSum(root->left , targetSum) + pathSum(root->right , targetSum)); // Just to visit each node.
+        return count;
     }
-    if(root ->right != NULL){
-        helper(root->right,ans, target - (root->val) ,vec);
+};
+// Solution 2
+class Solution {
+public:
+    void findPath(TreeNode* root, int& count, long long targetSum){
+        if(root == NULL) return;
+        if(targetSum-root->val == 0){
+            count++;
+        }
+        findPath(root->left, count, targetSum- root->val);
+        findPath(root->right, count, targetSum- root->val);
     }
-}
-vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
-    vector<vector<int>> ans;
-    helper(root, ans, targetSum ,{});
-    return ans;
-}
+    void dfs(TreeNode* root, int& count, long long targetSum){
+        if(root == NULL) return;
+        findPath(root, count, targetSum);
+        dfs(root->left, count, targetSum);
+        dfs(root->right, count, targetSum);
+    }
+    int pathSum(TreeNode* root, int targetSum) {
+        int count = 0;
+        dfs(root, count, (long long)targetSum);
+        return count;
+    }
+};
 int main(){
     TreeNode* a = new TreeNode(1);
     TreeNode* b = new TreeNode(2);

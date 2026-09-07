@@ -3,4 +3,3 @@ Path - Contains of a lot of nodes and each node is reachable. A node cannot appe
 Total degree of a graph = 2*Number of edges in a graph
 
 If weights are not assigned, always assume unit weight = 1
-

@@ -1,4 +1,15 @@
 // Leetcode 3558
+// We need the total cost to be odd.
+// The total is odd iff the number of edges assigned weight 1 is odd.
+// Suppose there are d edges.
+// For every assignment of the first d-1 edges, the last edge is forced:
+// If the first d-1 edges contain an even number of 1s → last edge must be 1.
+// If they contain an odd number of 1s → last edge must be 2.
+// So:
+// First d-1 edges:
+// each has 2 choices
+// Number of possibilities = 2^(d-1)
+// And exactly one choice of the last edge makes the total number of 1s odd.
 #include<bits/stdc++.h>
 using namespace std;
 const int mod = 1e9 + 7;
